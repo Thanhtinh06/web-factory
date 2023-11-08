@@ -1,0 +1,20 @@
+@mixin styleButton ($colorBorder,$borderRadius,$px,$py) {
+    background-color: transparent;
+    padding: $py $px;
+    border-radius: $borderRadius;
+    border: 1px solid $colorBorder;
+}
+
+@mixin styleText ($color,$fontSize,$fontWeight) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    color: $color;
+}
+
+@mixin flex ($direction,$jusItem,$align,$gap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $jusItem;
+    align-items: $align;
+    gap : $gap;
+}

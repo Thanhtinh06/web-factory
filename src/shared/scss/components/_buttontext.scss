@@ -1,0 +1,7 @@
+@use "./../abstracts" as a;
+@use "./../helpers/mixin" as mixin;
+
+.btn-form {
+  @include mixin.styleButton(a.$color-blue-primary,3px,30px,10px);
+  @include mixin.styleText(a.$color-blue-primary,a.$font10, 400)
+}

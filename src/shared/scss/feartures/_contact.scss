@@ -1,0 +1,22 @@
+@use './../abstracts' as a;
+
+.contact {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: a.$color-blue-secondary-05;
+    
+    .contact-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 60%;
+        margin: 0 auto;
+
+        .contact-right {
+            width: 50%;
+            display: flex;
+            justify-content: end;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+@use "./../abstracts/" as a;
+
+.download {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: a.$color-blue-secondary;
+  .download-content {
+    padding: 20px 0;
+    width: 60%;
+    margin: 0 auto;
+    .image-download {
+      display: flex;
+      gap: 5px;
+      img {
+        height: 40px;
+      }
+    }
+  }
+  .text-blue {
+    color: a.$color-blue-primary;
+    font-size: a.$font20;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+
+@media screen and (max-width : 600px) {
+  .download-content  {
+    display: flex;
+    flex-direction: column;
+    .image-download {
+      display: grid;
+      grid-template-columns: repeat(2);
+    }
+  }
+}

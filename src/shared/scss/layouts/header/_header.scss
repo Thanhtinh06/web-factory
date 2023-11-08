@@ -1,0 +1,32 @@
+@use './../../abstracts/' as a;
+
+nav {
+    position: fixed;
+    max-width: 100vw;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: a.$color-blue-secondary;
+    .menu {
+        padding: 20px 5%;
+        width: 40px;
+    }
+    .logo {
+        padding-left: 20%;
+        margin-right: 5px;
+        gap: 5px;
+    }
+
+    .width-20 {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width : 600px) {
+   nav {
+    .width-20 {
+        width: 50%;
+    }
+   }
+  }

@@ -1,0 +1,57 @@
+@use "./../abstracts" as a;
+@use "./../helpers" as mixin;
+
+.form {
+  width: 70%;
+  color: a.$color-blue-primary;
+  h2 {
+    @include mixin.styleText(a.$color-blue-primary, a.$font25, 700);
+  }
+  p {
+    @include mixin.styleText(a.$color-blue-primary, a.$font12, 400);
+  }
+  .form-contact {
+    margin-top: 20px;
+    @include mixin.flex(column, flex-start, flex-start, 15px);
+  }
+  .checkbox {
+    label {
+      @include mixin.styleText(a.$color-blue-primary, a.$font10, 400);
+    }
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"] + *::before {
+    content: "";
+    display: inline-block;
+    vertical-align: bottom;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-right: 0.3rem;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: a.$color-blue-primary;
+    flex-shrink: 0;
+  }
+  input[type="checkbox"]:checked + * {
+    color: teal;
+  }
+  input[type="checkbox"]:checked + *::before {
+    content: "✓";
+    color: white;
+    text-align: center;
+    background: teal;
+    border-color: teal;
+  }
+
+  select {
+    
+  }
+
+  .btn-submit {
+    align-self: center;
+  }
+}

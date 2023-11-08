@@ -1,0 +1,32 @@
+@use "./../abstracts" as a;
+
+.product {
+  color: a.$color-white;
+  margin-left: 20%;
+  padding-top: 25%;
+  width: 30%;
+  .product-header {
+    padding-bottom: 20px;
+  }
+  .title {
+    font-size: a.$font45;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .description {
+    color: a.$color-white;
+    font-size: a.$font20;
+    font-weight: 400;
+    height: 87px;
+    overflow-y: scroll;
+  }
+  .rating {
+    display: flex;
+    align-items: center;
+    font-size: a.$font11;
+    font-weight: 500;
+  }
+  svg {
+    height: 11px;
+  }
+}

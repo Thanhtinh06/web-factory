@@ -5,7 +5,7 @@ import Download from "../../../shared/components/download/Download";
 
 const Banner = () => {
   return (
-    <div className="banner">
+    <section className="banner">
       <div className="icon-left">
         <div>
           <IconImage />
@@ -16,7 +16,7 @@ const Banner = () => {
       </div>
       <ProductDescription />
       <Download />
-    </div>
+    </section>
   );
 };
 

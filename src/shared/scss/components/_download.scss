@@ -1,4 +1,5 @@
 @use "./../abstracts/" as a;
+@use "./../helpers/mixin" as mixin;
 
 .download {
   position: absolute;
@@ -7,6 +8,7 @@
   width: 100%;
   background-color: a.$color-blue-secondary;
   .download-content {
+    @include mixin.flex(row, space-between, center, none);
     padding: 20px 0;
     width: 60%;
     margin: 0 auto;
@@ -19,21 +21,36 @@
     }
   }
   .text-blue {
-    color: a.$color-blue-primary;
-    font-size: a.$font20;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+    @include mixin.styleText(a.$color-blue-primary, a.$font20, 700);
   }
 }
 
-@media screen and (max-width : 600px) {
-  .download-content  {
-    display: flex;
-    flex-direction: column;
-    .image-download {
-      display: grid;
-      grid-template-columns: repeat(2);
+@media screen and (max-width : 750px) {
+  .download {
+    .download-content {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      .image-download {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 10px;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        #item1 {
+          order: 3;
+        }
+        #item2 {
+          order: 2;
+        }
+        #item3 {
+          order: 1;
+        }
+      }
+    }
+    .text-blue {
+      @include mixin.styleText(a.$color-blue-primary, a.$font25, 700);
     }
   }
 }

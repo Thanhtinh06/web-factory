@@ -1,0 +1,93 @@
+@use "./../abstracts" as a;
+@use "./../helpers/mixin" as mixin;
+
+.card-event {
+  width: 401px;
+  height: 531px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: a.$color-blue-primary;
+  &.active {
+    width: 437px;
+    height: 599px;
+    .card-header {
+        .header-text {
+            display: block;
+        }
+        .header-image {
+            display: none;
+        }
+    }
+    .card-body {
+      h3 {
+        display: none;
+      }
+      .read-more {
+        display: block;
+      }
+    }
+  }
+  .card-header {
+    height: 50%;
+    padding: 27px 40px;
+    .header-text {
+      display: none;
+      .card-title {
+        text-transform: uppercase;
+        @include mixin.flex(row, space-between, flex-start, none);
+        h3 {
+          @include mixin.styleText(a.$color-white, a.$font35, 700);
+          letter-spacing: 1.05px;
+        }
+      }
+      .line {
+        width: 77.836px;
+        height: 2px;
+        background-color: a.$color-white;
+        margin: 16px 0;
+      }
+      p {
+        @include mixin.styleText(a.$color-white, a.$font15, 400);
+        letter-spacing: 0.45px;
+      }
+    }
+    .header-image {
+      display: block;
+      height: 100%;
+      div {
+        height: 100%;
+        @include mixin.flex(row, center, center, none);
+      }
+    }
+  }
+  .card-body {
+    border-radius: 10px;
+    width: 100%;
+    height: 50%;
+    background: rgb(72, 145, 233);
+    background: linear-gradient(
+      168deg,
+      rgba(72, 145, 233, 1) 0%,
+      rgba(9, 20, 33, 1) 100%
+    );
+    @include mixin.flex(row, center, flex-end, none);
+    button.read-more {
+      display: none;
+      padding: 25px 80px;
+      background-color: transparent;
+      border: 3px solid a.$color-white;
+      color: a.$color-white;
+      @include mixin.styleText(a.$color-white, a.$font21, 700);
+      letter-spacing: 1.05px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+    h3 {
+        display: block;
+        @include mixin.styleText(a.$color-white, a.$font35, 700);
+        letter-spacing: 1.05px;
+        text-transform: uppercase;
+        padding: 27px 40px;
+      }
+  }
+}

@@ -46,12 +46,13 @@
     background: teal;
     border-color: teal;
   }
-
-  select {
-    
-  }
-
   .btn-submit {
     align-self: center;
+  }
+}
+
+@media screen and (max-width : 750px) {
+  .form {
+    width: 100%;
   }
 }

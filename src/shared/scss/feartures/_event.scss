@@ -1,0 +1,13 @@
+@use './../abstracts' as a;
+@use './../helpers//mixin' as mixin;
+.event {
+    min-width: 100vh;
+    .event-header {
+        width: 60%;
+        margin: 0 auto;
+        p {
+            @include mixin.styleText(a.$color-blue-primary,a.$font25,400);
+            margin-top: 20px;
+        }
+    }
+}

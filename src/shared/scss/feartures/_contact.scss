@@ -1,22 +1,40 @@
 @use './../abstracts' as a;
+@use './../helpers//mixin' as mixin;
 
 .contact {
     min-height: 100vh;
-    display: flex;
-    align-items: center;
+    @include mixin.flex(row,flex-start,center,none);
     background: a.$color-blue-secondary-05;
     
     .contact-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include mixin.flex(row,space-between,center,none);
         width: 60%;
         margin: 0 auto;
-
+        .contact-left {
+            display: block;
+        }
         .contact-right {
             width: 50%;
-            display: flex;
-            justify-content: end;
+            @include mixin.flex(row,flex-end,none,none);
         }
     }
 }
+
+@media screen and (max-width : 750px) {
+    .contact {
+        @include mixin.flex(column,center,center,none);        
+        .contact-content {
+            @include mixin.flex(column,flex-start,center,none);
+            width: 80%;
+            margin: 0 auto;
+            .contact-left {
+                display: none;
+            }
+            .contact-right {
+                width: 100%;
+                margin-top: 20px;
+                display: block;
+            }
+        }
+    }
+   }

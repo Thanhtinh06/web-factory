@@ -1,0 +1,42 @@
+@use "./../abstracts/" as a;
+@use "./../helpers//mixin" as mixin;
+
+.community {
+  position: relative;
+  min-height: 100vh;
+  background-color: a.$color-white;
+  .community-content {
+    padding-top: 90px;
+    width: 60%;
+    margin: 0 auto;
+    @include mixin.flex(column, flex-start, flex-start, 30px);
+    .game {
+      h3 {
+        @include mixin.styleText(a.$color-blue-primary, a.$font25, 700);
+      }
+    }
+    .unity {
+      width: 100%;
+      @include mixin.flex(row, space-between, center, none);
+      p {
+        @include mixin.styleText(a.$color-blue-primary, a.$font30, 700);
+      }
+      .unity-right {
+        @include mixin.flex(row, flex-start, center, 10px);
+        .form-search {
+          position: relative;
+          button[type="submit"] {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            z-index: 1;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+}

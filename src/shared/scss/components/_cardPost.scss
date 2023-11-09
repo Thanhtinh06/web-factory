@@ -1,0 +1,23 @@
+@use "./../abstracts" as a;
+@use "./../helpers/mixin" as mixin;
+
+.card-post {
+  background-color: a.$color-blue-secondary;
+  width: 331px;
+  height: 383px;
+  flex-shrink: 0;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid a.$color-blue-primary;
+  @include mixin.flex(column, space-between, center, 10px);
+  .header-card {
+    width: 100%;
+    @include mixin.flex(row, space-between, center, none);
+  }
+  .body-card {
+    p {
+        @include mixin.styleText(a.$color-blue-primary,a.$font13,400);
+
+    }
+  }
+}

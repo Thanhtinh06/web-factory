@@ -1,2 +1,4 @@
-@use './../feartures/banner';
-@use './../feartures/contact';
+@forward './../feartures/banner';
+@forward './../feartures/contact';
+@forward './../feartures/community';
+@forward './../feartures/event';

@@ -3,15 +3,19 @@ import Header from "../../shared/layouts/header/Header";
 import GroupButton from "../../shared/components/groupButton/GroupButton";
 import Banner from "../feartures/banner/Banner";
 import Contact from "../feartures/contact/Contact";
+import Community from "../feartures/community/Community";
+import Event from "../feartures/event/Event";
 
 const Home = () => {
   return (
-    <div style={{ minHeight: "100vh" }}>
+    <main>
       <Header />
       <GroupButton />
       <Banner />
       <Contact />
-    </div>
+      <Community />
+      <Event />
+    </main>
   );
 };
 

@@ -4,7 +4,7 @@ import ContactForm from "../../../shared/components/contact-form/ContactForm";
 
 const Contact = () => {
   return (
-    <div className="contact">
+    <section className="contact">
       <div className="contact-content">
         <div className="contact-left">
           <img src={ContactImage} alt="" />
@@ -13,7 +13,7 @@ const Contact = () => {
           <ContactForm />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

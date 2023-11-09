@@ -1,4 +1,5 @@
 @use "./../abstracts" as a;
+@use "./../helpers/mixin" as mixin;
 
 .product {
   color: a.$color-white;
@@ -8,25 +9,39 @@
   .product-header {
     padding-bottom: 20px;
   }
-  .title {
-    font-size: a.$font45;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
   .description {
-    color: a.$color-white;
-    font-size: a.$font20;
-    font-weight: 400;
+    @include mixin.styleText(a.$color-white,a.$font20,400);
     height: 87px;
     overflow-y: scroll;
   }
   .rating {
-    display: flex;
-    align-items: center;
-    font-size: a.$font11;
-    font-weight: 500;
+    @include mixin.flex(row,flex-start,center,none);
+    @include mixin.styleText(a.$color-white,a.$font11,500);
   }
   svg {
     height: 11px;
+  }
+}
+
+@media screen and (max-width : 750px) {
+  .product {
+    width: 80%;
+    margin-left: 5%;
+    padding-top: 25%;
+    .product-header {
+      padding-bottom: 20px;
+    }
+    .description {
+      @include mixin.styleText(a.$color-white,a.$font20,400);
+      height: 87px;
+      overflow-y: scroll;
+    }
+    .rating {
+      @include mixin.flex(row,flex-start,center,none);
+      @include mixin.styleText(a.$color-white,a.$font11,500);
+    }
+    svg {
+      height: 11px;
+    }
   }
 }

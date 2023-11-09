@@ -1,4 +1,5 @@
-@use './../abstracts' as a; 
+@use "./../abstracts" as a;
+@use "./../helpers//mixin" as mixin;
 
 .input-contact {
   background: transparent;
@@ -9,9 +10,7 @@
   padding: 8px 10px;
   border: 1px solid a.$color-blue-primary;
   &::placeholder {
-    color: a.$color-blue-primary;
-    font-size: a.$font12;
-    font-weight: 400;
+    @include mixin.styleText(a.$color-blue-primary, a.$font12, 400);
   }
 }
 
@@ -23,3 +22,15 @@ select.input-contact {
     font-size: a.$font12;
   }
 }
+
+.search {
+  width: 233px;
+  height: 20px;
+  padding: 8px 10px;
+  border: 1px solid a.$color-blue-primary;
+  border-radius: 3px;
+  &::placeholder {
+    @include mixin.styleText(a.$color-blue-primary, a.$font12, 400);
+  }
+}
+

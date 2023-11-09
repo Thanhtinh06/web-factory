@@ -5,7 +5,7 @@ const ProductDescription = () => {
   return (
     <div className="product">
       <div className="product-header">
-        <h1 className="title">Gameloft game</h1>
+        <h2 className="title">Gameloft game</h2>
         <div className="rating">
           <p>Rating/Action | </p>
           <StarIcon />

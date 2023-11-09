@@ -1,7 +1,6 @@
 @use './../abstracts' as a;
 @use './../helpers//mixin' as mixin;
 .event {
-    min-width: 100vh;
     .event-header {
         width: 60%;
         margin: 0 auto;

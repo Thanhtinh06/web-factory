@@ -14,7 +14,11 @@ const Slider = () => {
     <div className="slider">
       <div className="listImage">{renderListPost()}</div>
       <div className="align-center">
-        <Slick idPre={"btn-pre-post"} idNext={"btn-next-post"} />
+        <Slick
+          idPre={"btn-pre-post"}
+          idNext={"btn-next-post"}
+          idSlide={"activeSlide"}
+        />
       </div>
     </div>
   );

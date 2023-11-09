@@ -5,7 +5,7 @@ import Download from "../../../shared/components/download/Download";
 
 const Banner = () => {
   return (
-    <section className="banner">
+    <section className="banner section" id="section-1">
       <div className="icon-left">
         <div>
           <IconImage />

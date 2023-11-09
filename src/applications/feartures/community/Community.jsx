@@ -9,7 +9,7 @@ import Slider from "../../../shared/components/slider/Slider";
 
 const Community = () => {
   return (
-    <section className="community">
+    <section className="community section" id="section-2">
       <div className="community-content">
         <h2 className="title text-blue">Game Community Hub</h2>
         <div className="game">

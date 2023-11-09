@@ -22,3 +22,17 @@ h2.title {
   justify-content: center;
   align-items: center;
 }
+
+.section {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.header-section {
+  width: 60%;
+  margin: 0 auto;
+  p {
+      @include mixin.styleText(a.$color-blue-primary,a.$font25,400);
+      margin-top: 20px;
+  }
+}

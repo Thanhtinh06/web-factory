@@ -1,0 +1,66 @@
+@use "./../abstracts/" as a;
+@use "./../helpers//mixin" as mixin;
+
+footer {
+  position: relative;
+  background-color: a.$color-blue-primary;
+  @include mixin.flex(row, center, center, none);
+  .container {
+    width: 60%;
+    height: 60%;
+    margin: auto auto;
+    .footer-top {
+      @include mixin.flex(row, space-between, flex-start, none);
+      padding: 50px 0;
+      .footer-left {
+        @include mixin.flex(column, flex-start, flex-start, 20px);
+        img {
+          width: 414px;
+          height: 129px;
+          flex-shrink: 0;
+        }
+        p {
+          @include mixin.styleText(a.$color-white, a.$font25, 700);
+        }
+        .lang {
+          position: relative;
+          select.language {
+            padding: 15px 30px;
+            border-color : transparent;
+          }
+          svg {
+            position: absolute;
+            top : 20%;
+            left: 0;
+            z-index: 1;
+          }
+        }
+      }
+    }
+    .footer-right {
+      @include mixin.flex(column, space-between, flex-start, 35px);
+      h3 {
+        @include mixin.styleText(a.$color-white, a.$font25, 700);
+        text-transform: uppercase;
+      }
+      li {
+        @include mixin.styleText(a.$color-white, a.$font20, 400);
+        line-height: 31px;
+      }
+    }
+  }
+  .footer-bottom {
+    margin-top: 60px;
+    p {
+      @include mixin.styleText(a.$color-white, a.$font15, 300);
+    }
+  }
+  .line {
+    position: absolute;
+    bottom: 15%;
+    left: 0;
+    width: 100vw;
+    height: 3px;
+    background-color: a.$color-white;
+  }
+}

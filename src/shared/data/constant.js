@@ -1,4 +1,5 @@
 import { ReactComponent as Image } from "./../assets/mount.svg";
+import { ReactComponent as ImageMount } from "./../assets/mount.svg";
 import game1 from "./../assets/NoPath - Copy (37).png";
 import game2 from "./../assets/NoPath - Copy (38).png";
 import game3 from "./../assets/NoPath - Copy (39).png";
@@ -89,61 +90,60 @@ export const AllGames = [
 export const AllEvents = [
   {
     shortTitle: "Short Title Here",
-    image: Image,
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore ...",
   },
   {
     shortTitle: "Short Title Here",
-    image: Image,
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore ...",
   },
   {
     shortTitle: "Short Title Here",
-    image: Image,
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore ...",
   },
   {
     shortTitle: "Short Title Here",
-    image: Image,
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore ...",
   },
   {
     shortTitle: "Short Title Here",
-    image: Image,
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore ...",
   },
 ];
 
 export const AllExclusiveContents = [
   {
-    image: Image,
+    image: <ImageMount />,
   },
   {
-    image: Image,
+    image: <ImageMount />,
   },
   {
-    image: Image,
+    image: <ImageMount />,
   },
   {
-    image: Image,
+    image: <ImageMount />,
   },
   {
-    image: Image,
+    image: <ImageMount />,
   },
   {
-    image: Image,
+    image: <ImageMount />,
   },
   {
-    image: Image,
+    image: <ImageMount />,
   },
   {
-    image: Image,
+    image: <ImageMount />,
   },
   {
-    image: Image,
+    image: <ImageMount />,
   },
   {
-    image: Image,
-  },
-  {
-    image: Image,
-  },
-  {
-    image: Image,
+    image: <ImageMount />,
   },
 ];

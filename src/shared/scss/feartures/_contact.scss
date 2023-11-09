@@ -2,7 +2,6 @@
 @use './../helpers//mixin' as mixin;
 
 .contact {
-    min-height: 100vh;
     @include mixin.flex(row,flex-start,center,none);
     background: a.$color-blue-secondary-05;
     

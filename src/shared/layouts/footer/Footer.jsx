@@ -1,5 +1,6 @@
 import React from "react";
-import { ReactComponent as IconSocial } from "../../assets/iconSocial.svg";
+import { ReactComponent as IconSocialDeskop } from "../../assets/iconSocial.svg";
+import { ReactComponent as IconSocialMobile } from "../../assets/socialMobile.svg";
 import { ReactComponent as IconLanguage } from "../../assets/web.svg";
 import Logo from "../../assets/Gameloft_Logo_Flat_White_Line.png";
 import Select from "../../components/form/Select";
@@ -14,7 +15,12 @@ const Footer = () => {
             <div className="social">
               <p>Follow us</p>
               <div className="list-social">
-                <IconSocial />
+                <div className="deskop">
+                  <IconSocialDeskop />
+                </div>
+                <div className="mobile">
+                  <IconSocialMobile />
+                </div>
               </div>
             </div>
             <div className="lang">

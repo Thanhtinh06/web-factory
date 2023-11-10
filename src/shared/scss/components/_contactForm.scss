@@ -2,7 +2,6 @@
 @use "./../helpers" as mixin;
 
 .form {
-  width: 70%;
   color: a.$color-blue-primary;
   h2 {
     @include mixin.styleText(a.$color-blue-primary, a.$font25, 700);
@@ -18,6 +17,7 @@
     label {
       @include mixin.styleText(a.$color-blue-primary, a.$font10, 400);
     }
+    max-width: 272px;
   }
 
   input[type="checkbox"] {
@@ -54,5 +54,6 @@
 @media screen and (max-width : 750px) {
   .form {
     width: 100%;
+    @include mixin.flex(column,center,center,none)
   }
 }

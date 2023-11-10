@@ -96,3 +96,51 @@
     }
   }
 }
+
+@media screen and (max-width: 750px) {
+  .card-event {
+    width: 257px;
+    height: 341px;
+    flex-shrink: 0;
+    &.active {
+      width: 280px;
+      height: 385px;
+    }
+    .card-header {
+      height: 50%;
+      padding: 17px 26px;
+      .header-text {
+        .card-title {
+          h3 {
+            @include mixin.styleText(a.$color-white, a.$font21, 700);
+            letter-spacing: 0.63px;
+          }
+        }
+        .line {
+          width: 77.836px;
+          height: 2px;
+          background-color: a.$color-white;
+          margin: 16px 0;
+        }
+        p {
+          @include mixin.styleText(a.$color-white, a.$font15, 400);
+          letter-spacing: 0.45px;
+        }
+      }
+    }
+    .card-body {
+      button.read-more {
+        padding: 16px 60px;
+        @include mixin.styleText(a.$color-white, a.$font12, 700);
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+      }
+      h3 {
+        @include mixin.styleText(a.$color-white, a.$font21, 700);
+        letter-spacing: 1.05px;
+        padding: 27px 40px;
+      }
+    }
+  }
+}

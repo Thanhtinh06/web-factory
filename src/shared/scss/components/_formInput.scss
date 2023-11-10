@@ -17,6 +17,10 @@
 select.input-contact {
   height: 48px;
   width: 272px;
+  color: a.$color-blue-primary;
+  option {
+    color: a.$color-blue-primary;;
+  }
   .text-blue {
     color: a.$color-blue-primary;
     font-size: a.$font12;

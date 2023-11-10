@@ -39,3 +39,42 @@
     }
   }
 }
+
+
+@media screen and (max-width : 750px) {
+  .community {
+    .community-content {
+      padding-top: 30px;
+      width: 90%;
+      margin: 0 auto;
+      h2 {
+        @include mixin.styleText(a.$color-blue-primary,a.$font25,700);
+        text-transform: none;
+      }
+      .game {
+        h3 {
+          display: none;
+        }
+      }
+      .unity {
+        width: 100%;
+        @include mixin.flex(column, space-between, center, none);
+        .unity-right {
+          .form-search {
+            position: relative;
+            button[type="submit"] {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              right: 0;
+              z-index: 1;
+              cursor: pointer;
+              border: none;
+              background: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}

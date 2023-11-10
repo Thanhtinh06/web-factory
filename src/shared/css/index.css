@@ -12,6 +12,9 @@
   justify-content: center;
   border: 1px solid transparent;
 }
+.icon:hover {
+  transition: all 0.5s;
+}
 .icon:hover.gray {
   color: #2699FB;
   border: 1px solid #2699FB;
@@ -377,6 +380,7 @@ h2.title.text-blue {
   font-size: 10px;
   font-weight: 400;
   color: #2699FB;
+  transition: all 0.5s;
 }
 .btn-form:hover {
   cursor: pointer;
@@ -544,10 +548,13 @@ h2.title.text-blue {
 .slick .left-arrow svg {
   width: 50px;
   height: 50px;
-  color: #D5ECFF;
+  color: #2699FB;
 }
 .slick .left-arrow:hover {
   cursor: pointer;
+}
+.slick .left-arrow.disable svg {
+  color: #D5ECFF;
 }
 .slick .numberSlider {
   text-align: center;
@@ -576,6 +583,9 @@ h2.title.text-blue {
 .slick .right-arrow:hover {
   cursor: pointer;
 }
+.slick .right-arrow.disable svg {
+  color: #D5ECFF;
+}
 
 @media screen and (max-width: 750px) {
   .slick {
@@ -603,21 +613,38 @@ h2.title.text-blue {
   flex-shrink: 0;
   border-radius: 10px;
   background: #2699FB;
+  transition: all 0.5s;
 }
-.card-event.active {
+.card-event:hover.active {
   width: 437px;
   height: 599px;
 }
-.card-event.active .card-header .header-text {
+.card-event:hover.active .card-header .header-text {
   display: block;
 }
-.card-event.active .card-header .header-image {
+.card-event:hover.active .card-header .header-image {
   display: none;
 }
-.card-event.active .card-body h3 {
+.card-event:hover.active .card-body h3 {
   display: none;
 }
-.card-event.active .card-body .read-more {
+.card-event:hover.active .card-body .read-more {
+  display: block;
+}
+.card-event.focus {
+  width: 437px;
+  height: 599px;
+}
+.card-event.focus .card-header .header-text {
+  display: block;
+}
+.card-event.focus .card-header .header-image {
+  display: none;
+}
+.card-event.focus .card-body h3 {
+  display: none;
+}
+.card-event.focus .card-body .read-more {
   display: block;
 }
 .card-event .card-header {
@@ -683,6 +710,7 @@ h2.title.text-blue {
   background-color: transparent;
   border: 3px solid white;
   color: white;
+  transition: all 0.5s;
   font-size: 21px;
   font-weight: 700;
   color: white;
@@ -711,7 +739,11 @@ h2.title.text-blue {
     height: 341px;
     flex-shrink: 0;
   }
-  .card-event.active {
+  .card-event:hover.active {
+    width: 280px;
+    height: 385px;
+  }
+  .card-event.focus {
     width: 280px;
     height: 385px;
   }
@@ -759,6 +791,9 @@ h2.title.text-blue {
   width: 100vw;
 }
 .slider-focus .wapper .list-card {
+  animation: scroll 15s linear infinite;
+  display: flex;
+  width: 2150px;
   height: 800px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -778,6 +813,8 @@ h2.title.text-blue {
   align-items: flex-start;
   gap: 10px;
   margin-top: 20px;
+  transition: background-color 3s ease;
+  background-color: transparent;
 }
 .slider-focus .slide-number button {
   font-size: 18px;
@@ -790,7 +827,38 @@ h2.title.text-blue {
 .slider-focus .slide-number button:hover {
   cursor: pointer;
 }
+.slider-focus .slide-number button.active {
+  background-color: #2699FB;
+}
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1075px);
+  }
+}
+@media screen and (max-width: 750px) {
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-642.5px);
+    }
+  }
+  .slider-focus .wapper {
+    max-width: 100vw;
+    width: 100vw;
+  }
+  .slider-focus .wapper .list-card {
+    animation: scroll 12s linear infinite;
+    display: flex;
+    width: 1285px;
+    height: 600px;
+  }
+}
 .image-card {
   background-color: #D5ECFF;
   width: 650px;

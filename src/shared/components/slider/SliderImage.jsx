@@ -11,7 +11,8 @@ const SliderImage = () => {
       document.querySelector(".slider-image .image-card"),
       document.querySelectorAll(".slider-image .slide-button-image"),
       "activeImage",
-      "btn-pre-img"
+      "btn-pre-img",
+      "btn-next-img"
     );
 
     slider.init();

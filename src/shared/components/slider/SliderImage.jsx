@@ -2,9 +2,20 @@ import React from "react";
 import { AllExclusiveContents } from "./../../data/constant";
 import { ReactComponent as IconDownload } from "./../../assets/download.svg";
 import Slick from "../slick/Slick";
-import * as slide from "./../../utils/scriptSlide";
+import SliderAction from "../../models/slider";
 
 const SliderImage = () => {
+  window.addEventListener("load", () => {
+    const slider = new SliderAction(
+      document.querySelector(".slider-image .listImage"),
+      document.querySelector(".slider-image .image-card"),
+      document.querySelectorAll(".slider-image .slide-button-image"),
+      "activeImage",
+      "btn-pre-img"
+    );
+
+    slider.init();
+  });
   const renderListImages = () => {
     return AllExclusiveContents.map(({ image }, index) => {
       return (
@@ -25,6 +36,7 @@ const SliderImage = () => {
           idPre={"btn-pre-img"}
           idNext={"btn-next-img"}
           idSlide={"activeImage"}
+          classNameButton={"slide-button-image"}
         />
       </div>
     </div>

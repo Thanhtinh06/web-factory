@@ -32,3 +32,16 @@
     }
   }
 }
+
+
+@media screen and (max-width : 750px) {
+  .listgame {
+    max-width: 80vw;
+    height: 180px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

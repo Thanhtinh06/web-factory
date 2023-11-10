@@ -12,7 +12,9 @@ const Header = () => {
           <IconGameLoft />
           <TextGameLoft />
         </div>
-        <IconCustome nameIcon="material-symbols:share" color="gray" />
+        <div className="icon-share">
+          <IconCustome nameIcon="material-symbols:share" color="gray" />
+        </div>
       </div>
       <div className="menu">
         <HamIcon />

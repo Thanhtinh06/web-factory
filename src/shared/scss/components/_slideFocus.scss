@@ -2,11 +2,13 @@
 @use "./../helpers/mixin" as mixin;
 
 .slider-focus {
+  overflow: hidden;
   .wapper {
     max-width: 100vw;
     width: 100vw;
+    overflow: hidden;
     .list-card {
-      animation: scroll 15s linear infinite;
+      animation: scroll 10s linear infinite;
       display: flex;
       width: calc(430px * 5);
       height: 800px;
@@ -14,8 +16,7 @@
       grid-template-columns: repeat(5, 1fr);
       align-items: center;
       gap: 18px;
-      overflow-x: auto;
-      overflow-y: hidden;
+      overflow: hidden;
       scrollbar-width: none;
       &::-webkit-scrollbar {
         display: none;

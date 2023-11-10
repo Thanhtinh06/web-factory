@@ -786,12 +786,16 @@ h2.title.text-blue {
     padding: 27px 40px;
   }
 }
+.slider-focus {
+  overflow: hidden;
+}
 .slider-focus .wapper {
   max-width: 100vw;
   width: 100vw;
+  overflow: hidden;
 }
 .slider-focus .wapper .list-card {
-  animation: scroll 15s linear infinite;
+  animation: scroll 10s linear infinite;
   display: flex;
   width: 2150px;
   height: 800px;
@@ -799,8 +803,7 @@ h2.title.text-blue {
   grid-template-columns: repeat(5, 1fr);
   align-items: center;
   gap: 18px;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: hidden;
   scrollbar-width: none;
 }
 .slider-focus .wapper .list-card::-webkit-scrollbar {

@@ -1,35 +1,61 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { AllEvents } from "./../../data/constant";
 import CardEvent from "../card/CardEvent";
 
 const SliderFocus = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const autoScrollInterval = setInterval(() => {
+      setActiveSlide((prevActiveSlide) => {
+        if (prevActiveSlide === AllEvents.length - 1) {
+          return 0;
+        }
+        return prevActiveSlide + 1;
+      });
+    }, 3000);
+
+    return () => {
+      clearInterval(autoScrollInterval);
+    };
+  }, []);
+
   const renderListEvents = () => {
     return AllEvents.map((event, index) => {
-      let isActive = index === 2 ? "active" : "";
+      let isFocus = activeSlide === index ? "focus" : "";
       return (
         <CardEvent
           image={event.image}
           description={event.description}
           shortTitle={event.shortTitle}
           key={index}
-          className={isActive}
+          className={`active ${isFocus}`}
         />
       );
     });
   };
+
+  const handleSlideNumberButtonClick = (event) => {
+    const slideNumber = event.target.id.split("-")[1];
+    setActiveSlide(slideNumber);
+  };
+
   return (
     <div className="slider-focus">
       <div className="wapper">
         <div className="list-card">{renderListEvents()}</div>
       </div>
       <div className="slide-number">
-        <button id="btn-1" className="active">
-          1
-        </button>
-        <button id="btn-2">2</button>
-        <button id="btn-3">3</button>
-        <button id="btn-4">4</button>
-        <button id="btn-4">5</button>
+        {AllEvents.map((event, index) => (
+          <button
+            id={`btn-${index + 1}`}
+            key={index}
+            className={activeSlide === index ? "active" : ""}
+            onClick={handleSlideNumberButtonClick}
+          >
+            {index + 1}
+          </button>
+        ))}
       </div>
     </div>
   );

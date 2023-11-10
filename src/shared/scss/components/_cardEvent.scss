@@ -7,7 +7,30 @@
   flex-shrink: 0;
   border-radius: 10px;
   background: a.$color-blue-primary;
-  &.active {
+  transition: all 0.5s;
+  &:hover {
+    &.active {
+      width: 437px;
+      height: 599px;
+      .card-header {
+        .header-text {
+          display: block;
+        }
+        .header-image {
+          display: none;
+        }
+      }
+      .card-body {
+        h3 {
+          display: none;
+        }
+        .read-more {
+          display: block;
+        }
+      }
+    }
+  }
+  &.focus {
     width: 437px;
     height: 599px;
     .card-header {
@@ -77,6 +100,7 @@
       background-color: transparent;
       border: 3px solid a.$color-white;
       color: a.$color-white;
+      transition: all 0.5s;
       @include mixin.styleText(a.$color-white, a.$font21, 700);
       letter-spacing: 1.05px;
       text-transform: uppercase;
@@ -102,7 +126,14 @@
     width: 257px;
     height: 341px;
     flex-shrink: 0;
-    &.active {
+    &:hover {
+      &.active {
+        width: 280px;
+        height: 385px;
+      }
+    }
+
+    &.focus {
       width: 280px;
       height: 385px;
     }

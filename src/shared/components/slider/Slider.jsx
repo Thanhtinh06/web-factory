@@ -17,10 +17,12 @@ const Slider = () => {
       document.querySelector(".slider .card-post"),
       document.querySelectorAll(".slider .slide-button"),
       "activeSlide",
-      "btn-pre-post"
+      "btn-pre-post",
+      "btn-next-post"
     );
 
     slider.init();
+
   });
 
   return (

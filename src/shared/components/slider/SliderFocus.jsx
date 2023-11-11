@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { AllEvents } from "./../../data/constant";
 import CardEvent from "../card/CardEvent";
-import SliderAutoAction from "../../models/sliderAuto";
 
 const SliderFocus = () => {
-  // const listImage = document.querySelector(".slider-focus .list-card");
-  // const imageCard = document.querySelector(".slider-focus .card-event");
-  // const slideButtons = document.querySelectorAll(".slide-number");
-
   const [activeSlide, setActiveSlide] = useState(0);
   const autoScrollInterval = () =>
     setInterval(() => {
@@ -25,13 +20,6 @@ const SliderFocus = () => {
       clearInterval(autoScroll);
     };
   }, []);
-
-  // const sliderAutoAction = new SliderAutoAction(
-  //   listImage,
-  //   imageCard,
-  //   slideButtons,
-  //   activeSlide
-  // );
 
   const renderListEvents = () => {
     return AllEvents.map((event, index) => {

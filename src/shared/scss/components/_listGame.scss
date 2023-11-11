@@ -8,10 +8,17 @@
   overflow-x: scroll;
   margin-top: 20px;
   .game-item {
+    border: none;
+    background-color: transparent;
     position: relative;
+    &:hover {
+      cursor: pointer;
+    }
     img {
       border-radius: 50%;
       padding: 3px;
+      border: 3px solid transparent;
+
     }
     p {
       position: absolute;

@@ -4,9 +4,8 @@ import CardEvent from "../card/CardEvent";
 
 const SliderFocus = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-
-  useEffect(() => {
-    const autoScrollInterval = setInterval(() => {
+  const autoScrollInterval = () =>
+    setInterval(() => {
       setActiveSlide((prevActiveSlide) => {
         if (prevActiveSlide === AllEvents.length - 1) {
           return 0;
@@ -15,8 +14,10 @@ const SliderFocus = () => {
       });
     }, 3000);
 
+  useEffect(() => {
+    const autoScroll = autoScrollInterval();
     return () => {
-      clearInterval(autoScrollInterval);
+      clearInterval(autoScroll);
     };
   }, []);
 
@@ -30,14 +31,15 @@ const SliderFocus = () => {
           shortTitle={event.shortTitle}
           key={index}
           className={`active ${isFocus}`}
+          index={index}
         />
       );
     });
   };
 
-  const handleSlideNumberButtonClick = (event) => {
-    const slideNumber = event.target.id.split("-")[1];
-    setActiveSlide(slideNumber);
+  const handleSlideNumberButtonClick = (index) => {
+    setActiveSlide(index);
+    clearInterval(autoScrollInterval());
   };
 
   return (
@@ -50,8 +52,8 @@ const SliderFocus = () => {
           <button
             id={`btn-${index + 1}`}
             key={index}
-            className={activeSlide === index ? "active" : ""}
-            onClick={handleSlideNumberButtonClick}
+            className={`navigate-btn ${activeSlide === index ? "active" : ""}`}
+            onClick={() => handleSlideNumberButtonClick(index)}
           >
             {index + 1}
           </button>

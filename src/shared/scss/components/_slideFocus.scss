@@ -6,9 +6,13 @@
   .wapper {
     max-width: 100vw;
     width: 100vw;
-    overflow: hidden;
+    overflow: auto;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     .list-card {
-      animation: scroll 10s linear infinite;
+      animation: scroll 15s linear infinite;
       display: flex;
       width: calc(430px * 5);
       height: 800px;
@@ -16,11 +20,6 @@
       grid-template-columns: repeat(5, 1fr);
       align-items: center;
       gap: 18px;
-      overflow: hidden;
-      scrollbar-width: none;
-      &::-webkit-scrollbar {
-        display: none;
-      }
     }
   }
   .slide-number {
@@ -37,7 +36,8 @@
         cursor: pointer;
       }
       &.active {
-        background-color: a.$color-blue-primary;
+        border: 2px solid a.$color-blue-primary;
+        border-radius: 50%;
       }
     }
   }
@@ -48,7 +48,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-430px * 2.5));
+    transform: translateX(calc(-430px * 1.9));
   }
 }
 

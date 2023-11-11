@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { AllEvents } from "./../../data/constant";
 import CardEvent from "../card/CardEvent";
+import SliderAutoAction from "../../models/sliderAuto";
 
 const SliderFocus = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
+  // const listImage = document.querySelector(".slider-focus .list-card");
+  // const imageCard = document.querySelector(".slider-focus .card-event");
+  // const slideButtons = document.querySelectorAll(".slide-number");
 
-  useEffect(() => {
-    const autoScrollInterval = setInterval(() => {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const autoScrollInterval = () =>
+    setInterval(() => {
       setActiveSlide((prevActiveSlide) => {
         if (prevActiveSlide === AllEvents.length - 1) {
           return 0;
@@ -15,10 +19,19 @@ const SliderFocus = () => {
       });
     }, 3000);
 
+  useEffect(() => {
+    const autoScroll = autoScrollInterval();
     return () => {
-      clearInterval(autoScrollInterval);
+      clearInterval(autoScroll);
     };
   }, []);
+
+  // const sliderAutoAction = new SliderAutoAction(
+  //   listImage,
+  //   imageCard,
+  //   slideButtons,
+  //   activeSlide
+  // );
 
   const renderListEvents = () => {
     return AllEvents.map((event, index) => {
@@ -30,14 +43,15 @@ const SliderFocus = () => {
           shortTitle={event.shortTitle}
           key={index}
           className={`active ${isFocus}`}
+          index={index}
         />
       );
     });
   };
 
-  const handleSlideNumberButtonClick = (event) => {
-    const slideNumber = event.target.id.split("-")[1];
-    setActiveSlide(slideNumber);
+  const handleSlideNumberButtonClick = (index) => {
+    setActiveSlide(index);
+    clearInterval(autoScrollInterval());
   };
 
   return (
@@ -50,8 +64,8 @@ const SliderFocus = () => {
           <button
             id={`btn-${index + 1}`}
             key={index}
-            className={activeSlide === index ? "active" : ""}
-            onClick={handleSlideNumberButtonClick}
+            className={`navigate-btn ${activeSlide === index ? "active" : ""}`}
+            onClick={() => handleSlideNumberButtonClick(index)}
           >
             {index + 1}
           </button>

@@ -825,6 +825,8 @@ h2.title.text-blue {
   background-color: transparent;
 }
 .slider-focus .slide-number button {
+  width: 30px;
+  height: 30px;
   font-size: 18px;
   font-weight: 400;
   color: #2699FB;

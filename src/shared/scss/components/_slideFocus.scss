@@ -28,6 +28,8 @@
     transition: background-color 3s ease;
     background-color: transparent;
     button {
+      width: 30px;
+      height: 30px;
       @include mixin.styleText(a.$color-blue-primary, a.$font18, 400);
       position: relative;
       border: none;

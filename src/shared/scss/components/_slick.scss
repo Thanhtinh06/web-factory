@@ -68,11 +68,17 @@
           @include mixin.styleText(a.$color-blue-primary, a.$font13, 700);
         }
       }
-    .left-arrow + .right-arrow {
+    .left-arrow {
         svg {
             width: 25px !important;
             height: 25px !important;
         }
+    }
+    .right-arrow {
+      svg {
+        width: 25px !important;
+        height: 25px !important;
+    }
     }
   }
 }

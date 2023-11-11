@@ -608,7 +608,11 @@ h2.title.text-blue {
     font-weight: 700;
     color: #2699FB;
   }
-  .slick .left-arrow + .right-arrow svg {
+  .slick .left-arrow svg {
+    width: 25px !important;
+    height: 25px !important;
+  }
+  .slick .right-arrow svg {
     width: 25px !important;
     height: 25px !important;
   }
@@ -833,6 +837,7 @@ h2.title.text-blue {
   position: relative;
   border: none;
   background-color: transparent;
+  padding: 0;
 }
 .slider-focus .slide-number button:hover {
   cursor: pointer;
@@ -856,7 +861,7 @@ h2.title.text-blue {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-642.5px);
+      transform: translateX(-257px);
     }
   }
   .slider-focus .wapper {
@@ -864,7 +869,7 @@ h2.title.text-blue {
     width: 100vw;
   }
   .slider-focus .wapper .list-card {
-    animation: scroll 12s linear infinite;
+    animation: scroll 6s linear infinite;
     display: flex;
     width: 1285px;
     height: 600px;
